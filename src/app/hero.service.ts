@@ -18,4 +18,12 @@ export class HeroService {
 
         return of(HEROES);
     }
+
+    getHero(id): Hero {
+        return HEROES.find(function(element) {
+            if(element.id == id) {
+                return element;
+            }
+        });
+    }
 }
