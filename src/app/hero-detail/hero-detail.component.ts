@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService }  from '../hero.service';
 import {Hero} from "../hero";
-import {getHashes} from "crypto";
 
 @Component({
   selector: 'app-hero-detail',
@@ -31,11 +30,13 @@ export class HeroDetailComponent implements OnInit {
 
   getHero() {
     this.route.params.subscribe(params => {
-        console.log(params);
+        //console.log(this.heroService.getHero(params.id));
         this.hero = this.heroService.getHero(params.id);
-        console.log(this.hero);
     });
-    console.log(this.hero);
+  }
+
+  goBack() {
+      this.location.back();
   }
 
 }

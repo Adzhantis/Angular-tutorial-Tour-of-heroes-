@@ -20,10 +20,13 @@ export class HeroService {
     }
 
     getHero(id): Hero {
-        return HEROES.find(function(element) {
-            if(element.id == id) {
-                return element;
-            }
+
+        var hero = HEROES.find(function(hero) {
+            return hero.id == id;
         });
+
+        console.log(hero);
+
+        return hero;
     }
 }
